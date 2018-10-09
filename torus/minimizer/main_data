@@ -1,0 +1,122 @@
+Number of variables: 7
+Variables:  a b c d l0 l1 l2
+Rank: 6
+-------------------------
+Solution 3 (path number 4)
+Estimated condition number: 7.192143544452662e+01
+Function residual: 5.236911533344270e-16
+Latest Newton residual: 3.496850932848703e-15
+T value at final sample point: 2.441406250000000e-05
+Maximum precision utilized: 52
+T value of first precision increase: 0.000000000000000e+00
+Accuracy estimate, internal coordinates (difference of last two endpoint estimates):  1.056113329275152e-14
+Accuracy estimate, user's coordinates (after dehomogenization, if applicable):  3.205843439778070e-14
+Cycle number: 1
+5.713962220941904e-01 -4.950487489729058e-01
+-5.032139717945433e-01 8.957798958061564e-03
+6.218462073993942e-01 1.480591938353243e+00
+-1.449014058622832e+00 3.679626804380338e-01
+1.000000000000000e+00 0.000000000000000e+00
+-3.958808014732659e-01 -4.473390063099942e-01
+-5.742900079155736e-01 2.920601714903278e-01
+Paths with the same endpoint, to the prescribed tolerance:  
+Multiplicity: 1
+-------------------------
+Solution 0 (path number 14)
+Estimated condition number: 1.710490776451656e+01
+Function residual: 1.241267076623637e-16
+Latest Newton residual: 5.335172988447156e-16
+T value at final sample point: 2.441406250000000e-05
+Maximum precision utilized: 52
+T value of first precision increase: 0.000000000000000e+00
+Accuracy estimate, internal coordinates (difference of last two endpoint estimates):  2.864136364800710e-14
+Accuracy estimate, user's coordinates (after dehomogenization, if applicable):  2.157992917067220e-13
+Cycle number: 1
+-5.713962220941904e-01 4.950487489729059e-01
+5.032139717945435e-01 -8.957798958061550e-03
+-6.218462073993936e-01 -1.480591938353244e+00
+1.449014058622832e+00 -3.679626804380333e-01
+1.000000000000000e+00 0.000000000000000e+00
+-6.041191985267341e-01 4.473390063099941e-01
+-4.257099920844265e-01 -2.920601714903277e-01
+Paths with the same endpoint, to the prescribed tolerance:  
+Multiplicity: 1
+-------------------------
+Solution 2 (path number 21)
+Estimated condition number: 3.900934071073866e+01
+Function residual: 1.494683490070454e-16
+Latest Newton residual: 5.674889867502170e-16
+T value at final sample point: 2.441406250000000e-05
+Maximum precision utilized: 52
+T value of first precision increase: 0.000000000000000e+00
+Accuracy estimate, internal coordinates (difference of last two endpoint estimates):  1.215361677818559e-14
+Accuracy estimate, user's coordinates (after dehomogenization, if applicable):  1.324896535768051e-13
+Cycle number: 1
+5.713962220941902e-01 -4.950487489729057e-01
+-5.032139717945433e-01 8.957798958061550e-03
+-6.218462073993940e-01 -1.480591938353242e+00
+1.449014058622831e+00 -3.679626804380338e-01
+1.000000000000000e+00 0.000000000000000e+00
+-3.958808014732660e-01 -4.473390063099943e-01
+-4.257099920844264e-01 -2.920601714903277e-01
+Paths with the same endpoint, to the prescribed tolerance:  
+Multiplicity: 1
+-------------------------
+Solution 1 (path number 23)
+Estimated condition number: 2.499579489413203e+01
+Function residual: 2.220446049250313e-16
+Latest Newton residual: 7.060921381020306e-16
+T value at final sample point: 2.441406250000000e-05
+Maximum precision utilized: 52
+T value of first precision increase: 0.000000000000000e+00
+Accuracy estimate, internal coordinates (difference of last two endpoint estimates):  1.551301289433864e-13
+Accuracy estimate, user's coordinates (after dehomogenization, if applicable):  8.907921758322106e-13
+Cycle number: 1
+-5.713962220941906e-01 4.950487489729058e-01
+5.032139717945433e-01 -8.957798958061439e-03
+6.218462073993936e-01 1.480591938353243e+00
+-1.449014058622831e+00 3.679626804380331e-01
+1.000000000000000e+00 0.000000000000000e+00
+-6.041191985267339e-01 4.473390063099943e-01
+-5.742900079155734e-01 2.920601714903278e-01
+Paths with the same endpoint, to the prescribed tolerance:  
+Multiplicity: 1
+-------------------------
+At tol=1.000000000000e-10, there appear to be 4 solutions.
+
+
+*************** input file needed to reproduce this run ***************
+
+CONFIG
+
+ParameterHomotopy: 1;
+CoeffBound: 1.992603000000e+00;
+DegreeBound: 2.000000000000e+00;
+RandomSeed: 1534989549;
+
+END;
+
+INPUT
+
+parameter apar,bpar,cpar,dpar,eps0,eps1;
+variable_group a,b,c,d;
+hom_variable_group l0,l1,l2;
+function f0,f1,g0,g1,g2,g3;
+f0=a^2+b^2-eps0-1;
+f1=c^2+d^2-eps1-1;
+g0=2*a*l1+l0*(a-apar);
+g1=2*b*l1+l0*(b-bpar);
+g2=2*c*l2+l0*(c-cpar);
+g3=2*d*l2+l0*(d-dpar);
+
+END;
+
+
+*************** version information ***************
+Bertini(TM) v1.5.1
+GMP v6.1.1, MPFR v3.1.4
+
+Authors:
+D.J. Bates, J.D. Hauenstein,
+A.J. Sommese, C.W. Wampler
+

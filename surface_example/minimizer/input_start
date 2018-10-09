@@ -1,0 +1,35 @@
+CONFIG
+ ParameterHomotopy: 1;
+ ODEPredictor: 2;
+ TrackTolBeforeEG: 1e-5;
+ TrackTolDuringEG: 1e-7;
+ FinalTol: 1e-10;
+ SliceTolBeforeEG: 1e-7;
+ SliceTolDuringEG: 1e-7;
+ SliceFinalTol: 1e-10;
+ SecurityMaxNorm: 1e7;
+ MaxNorm: 1e7;
+END;
+INPUT
+
+parameter as,bs,cs,ds,es,fs,eps1,eps2,eps3,eps4;
+variable_group a,b,c,d,e,f;
+function F1,F2,F3,F4;
+hom_variable_group l0,l1,l2,l3,l4;
+function G1,G2,G3,G4,G5,G6;
+
+F1 = ((d + e + f + 1.0)^2 + (a + b + c)^2 - 1.0) - eps1;
+F2 = (a^2 + d^2 - 1.0) - eps2;
+F3 = (b^2 + e^2 - 1.0) - eps3;
+F4 = (c^2 + f^2 - 1.0) - eps4;
+
+G1 = l0*(a - as) + l1*(2.0*a + 2.0*b + 2.0*c) + l2*(2.0*a);
+G2 = l0*(b - bs) + l1*(2.0*a + 2.0*b + 2.0*c) + l3*(2.0*b);
+G3 = l0*(c - cs) + l1*(2.0*a + 2.0*b + 2.0*c) + l4*(2.0*c);
+G4 = l0*(d - ds) + l1*(2.0*d + 2.0*e + 2.0*f + 2.0) + l2*(2.0*d);
+G5 = l0*(e - es) + l1*(2.0*d + 2.0*e + 2.0*f + 2.0) + l3*(2.0*e);
+G6 = l0*(f - fs) + l1*(2.0*d + 2.0*e + 2.0*f + 2.0) + l4*(2.0*f);
+
+
+END;
+

@@ -1,0 +1,15 @@
+CONFIG
+ParameterHomotopy: 2
+END; 
+INPUT
+parameter apar,bpar,cpar,dpar,eps0,eps1;
+variable_group a,b,c,d;
+ hom_variable_group l0,l1,l2;
+ function f0,f1,g0,g1,g2,g3;
+ f0 = a^2 + b^2 - eps0 - 1;
+ f1 = c^2 + d^2 - eps1 - 1;
+ g0 = 2*a*l1 + l0*(a - apar);
+ g1 = 2*b*l1 + l0*(b - bpar);
+ g2 = 2*c*l2 + l0*(c - cpar);
+ g3 = 2*d*l2 + l0*(d - dpar);
+END;

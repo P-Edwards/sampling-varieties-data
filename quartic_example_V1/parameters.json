@@ -1,0 +1,9 @@
+{
+	"bounds": [-3.0,3.0,-3.0,3.0,-3.0,3.0],
+    "density_parameter": 2e-1,
+	"number_of_functions": 1,
+	"number_of_processors_for_bertini": 1, 
+	"number_of_parallel_instances": 100, 
+	"bertini_executable_location": "/ufrc/bubenik/pedwards/samp_algorithm/BertiniLinux64_v1.5.1/bertini", 
+	"number_of_allowed_skips": 100
+}
